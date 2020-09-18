@@ -105,6 +105,6 @@ app.use('/', cardsRouter);
 app.use('/user', usersRouter);
 
 // App tinglanishi
-app.listen(3000, () => {
-    console.log("3000 Porti Ishga Tushdi")
+app.listen(3001, () => {
+    console.log("3000 Porti Ishga Tushdi !!!!!!!!!!!!!!!!!!!!!!")
 });
