@@ -1,0 +1,7 @@
+.messages
+    each type in Object.keys(messages)
+            each message in messages[type]
+                div(class='alert alert-success alert-dismissible fade show' role='alert')
+                    strong #{message}
+                    button.close(type='button', data-dismiss='alert', aria-label='Close')
+                        span(aria-hidden='true') ×

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1.m-5.text-primary  #{title}
+    form.m-5(method='POST', action='/user/signIn')
+        .form-group
+            label Username
+            input.form-control(placeholder='Username`ingiz...', name='username')
+        .form-group
+            label Parol
+            input.form-control(placeholder='Parolingiz...', name='password', type='password')
+        .form-group.form-check
+        button.btn.btn-success(type='submit') Tizimga Kirish

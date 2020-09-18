@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h1.w-25.m-auto.p-3 #{title}
+    ul.list-group.w-75.m-auto.p-5
+        each card,i in cards
+            li.list-group-item.bg-warning.text-lg-center
+                a(href="/karta/"+card._id).text-dark= card.egasi

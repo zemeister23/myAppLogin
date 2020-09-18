@@ -1,0 +1,19 @@
+extends layout
+
+
+block content
+    .my-3.p-3.bg-white.rounded.box-shadow
+        h6.border-bottom.border-gray.pb-2.mb-0 Kartalar
+        .media.text-muted.pt-3
+            img.img-lg.rounded-circle.mb-4.pr-3(src='https://img.icons8.com/bubbles/100/000000/administrator-male.png', alt='profile image')
+            .media-body.pb-3.mb-0.small.lh-125.border-bottom.border-gray
+                .d-flex.justify-content-between.align-items-center.w-100
+                    strong.text-gray-dark #{card.egasi}
+                    a.btn.btn-success.btn-icon-text.animatebutton(href='/karta/ozgartir/'+card._id) O'zgartirish
+                    button.btn.btn-danger.btn-icon-text.animatebutton.delete-profile O'chirish
+                span.d-block <b>Karta Turi:</b> #{card.turi}
+                br
+                span.d-block <b>Karta Izohi:</b> '#{card.sarlavha}'
+
+        small.d-block.text-right.mt-3
+            a(href='/') Barcha Kartalar

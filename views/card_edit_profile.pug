@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h1.m-5  #{title}
+    form.m-5(method='POST', action='/karta/ozgartir/' + card._id)
+        .form-group
+            label Raqami
+            input.form-control(placeholder='Raqami...', name='raqami', value=card.raqami)
+        .form-group
+            label Turi
+            input.form-control(placeholder='Turi...', name='turi' value=card.turi)
+        .form-group
+            label Egasi
+            input.form-control(placeholder='Egasi...', name='egasi' value=card.egasi)
+        .form-group
+            label Sarlavha
+            textarea.form-control(placeholder='Izohingizni Kiriting...', name='sarlavha')= card.sarlavha
+        .form-group.form-check
+        button.btn.btn-primary(type='submit') O'zgartirish

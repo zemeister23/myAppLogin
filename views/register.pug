@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1.m-5  #{title}
+    form.m-5(method='POST', action='/user/register')
+        .form-group
+            label Ismingiz(To'liq)
+            input.form-control(placeholder='Ismingiz...', name='ism',)
+        .form-group
+            label Emailingiz
+            input.form-control(placeholder='Emailingiz...', name='email')
+        .form-group
+            label Username
+            input.form-control(placeholder='Username`ingiz...', name='username')
+        .form-group
+            label Parol
+            input.form-control(placeholder='Parolingiz...', name='password', type='password')
+        .form-group
+            label Parol Qaytadan
+            input.form-control(placeholder='Parolingiz Qaytadan...', name='password2', type='password')
+        .form-group.form-check
+        button.btn.btn-success(type='submit') Ro'yhatdan O'tish

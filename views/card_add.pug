@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1.m-5  #{title}
+    form.m-5(method='POST', action='/karta/qosh')
+        .form-group
+            label Raqami
+            input.form-control(placeholder='Raqami...', name='raqami', type='text')
+        .form-group
+            label Turi
+            input.form-control(placeholder='Turi...', name='turi' type='text')
+        .form-group
+            label Egasi
+            input.form-control(placeholder='Egasi...', name='egasi' type='text')
+        .form-group
+            label Sarlavha
+            textarea.form-control(placeholder='Izohingizni Kiriting...', name='sarlavha')
+        .form-group.form-check
+        button.btn.btn-primary(type='submit') Qabul qil
+
+

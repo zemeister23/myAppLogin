@@ -1,0 +1,91 @@
+doctype html
+html
+    head
+        - var title1= assosiyTitle;
+
+        if !title1
+            title ASL PROJECT
+        else
+            title #{assosiyTitle}
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    body
+        - var rang= rang
+
+        if rang === 'bg-danger'
+            nav.navbar.navbar-expand-lg.navbar-light.bg-danger
+                a.navbar-brand(href='/') Karta
+                button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                    span.navbar-toggler-icon
+                #navbarSupportedContent.collapse.navbar-collapse
+                    ul.navbar-nav.mr-auto
+                        li.nav-item
+                            a.nav-link(href='/')
+                                | Bosh Sahifa
+                                span.sr-only (current)
+                        li.nav-item
+                            a.nav-link(href='/karta/qosh') Karta Qoshish
+
+                    if !search
+                            form.form-inline.my-2.my-lg-0.mr-5
+                                input.form-control.mr-sm-2(type='search', placeholder='Qidiruv', aria-label='Search')
+                                button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Qidirish
+
+                    ul.nav.navbar-nav.navbar-right
+                        if user
+                            li.nav-item
+                                a.nav-link.btn.btn-outline-danger.mr-2(href='/user/logOut')
+                                    span Chiqish
+                        else
+                            li.nav-item
+                                a.nav-link.btn.btn-outline-primary.mr-2(href='/user/signIn')
+                                    span Kirish
+                            li.nav-item
+                                a.nav-link.btn.btn-outline-success(href='/user/register')
+                                    span Ro'yhatdan O't
+        else
+            nav.navbar.navbar-expand-lg.navbar-light.bg-light
+                a.navbar-brand(href='/') Karta
+                button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                    span.navbar-toggler-icon
+                #navbarSupportedContent.collapse.navbar-collapse
+                    ul.navbar-nav.mr-auto
+                        li.nav-item
+                            a.nav-link(href='/')
+                                | Bosh Sahifa
+                                span.sr-only (current)
+                        li.nav-item
+                            a.nav-link(href='/karta/qosh') Karta Qoshish
+
+                    if !search
+                        form.form-inline.my-2.my-lg-0.mr-5
+                            input.form-control.mr-sm-2(type='search', placeholder='Qidiruv', aria-label='Search')
+                            button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Qidirish
+
+                    ul.nav.navbar-nav.navbar-right
+                        if user
+                            li.nav-item
+                                a.nav-link.btn.btn-outline-danger.mr-2(href='/user/logOut')
+                                    span Chiqish
+                        else
+                            li.nav-item
+                                a.nav-link.btn.btn-outline-primary.mr-2(href='/user/signIn')
+                                    span Kirish
+                            li.nav-item
+                                a.nav-link.btn.btn-outline-success(href='/user/register')
+                                    span Ro'yhatdan O't
+        container
+            != messages('message', locals)
+            if errors
+                each error,i in errors
+                    div(class="alert alert-danger") #{error.msg}
+
+            block content
+                hr
+                footer
+                    p Sahifa 2020-yilda Chiqarildi
+
+            block javascripts
+                script(src='https://code.jquery.com/jquery-3.1.1.min.js')
+                script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV", crossorigin="anonymous")
+                script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js", integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf", crossorigin="anonymous")
+                script(src="js/index.js")
