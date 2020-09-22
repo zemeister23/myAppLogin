@@ -11,6 +11,8 @@ const favicon = require('serve-favicon');
 // Routes IMPORT
 const cardsRouter = require('./routes/cards.js');
 const usersRouter = require('./routes/users.js');
+const adminRouter = require('./routes/admin-dashboard.js');
+const chartsRouter = require('./routes/charts.js');
 
 //SECRET JS INIT
 const db_db = require('./cf/secret').db;
@@ -104,7 +106,12 @@ app.use('/', cardsRouter);
 // User Route
 app.use('/user', usersRouter);
 
+// Admin Dashboard Route
+app.use('/admin', adminRouter);
+// Charts Route
+app.use('/charts', chartsRouter);
+
 // App tinglanishi
-app.listen(3001, () => {
-    console.log("3000 Porti Ishga Tushdi !!!!!!!!!!!!!!!!!!!!!!")
+app.listen(3000, () => {
+    console.log("3000 Porti Ishga Tushdi !!!!!!!!!!!!!!!!!!!!!!!!!")
 });

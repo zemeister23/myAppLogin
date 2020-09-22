@@ -83,10 +83,10 @@ router.get('/karta/:id', (req,res) => {
 // Karta Profile Edit GET
 router.get('/karta/ozgartir/:id', (req,res) => {
 
-    Karta.findById(req.params.id, (err, card) => {
+    Karta.findById(req.params.id, (err, data) => {
         res.render('card_edit_profile', {
             title: 'Karta O\'zgartirish',
-            card,
+            data,
             search: true,
             assosiyTitle: "Kartani O'zgartirish"
         });
@@ -105,14 +105,9 @@ router.post('/karta/ozgartir/:id', (req,res) => {
 
     const link = { _id: req.params.id };
 
-    Karta.updateOne(link, card, (err) => {
-        if (err)
-            console.log(err);
-        else{
-            req.flash('success',"Karta O'zgartirildi");
-            res.redirect('/');
-        }
-
+    Karta.updateOne(link, card, () => {
+        req.flash('success',"Karta O'zgartirildi");
+        res.redirect('/');
     });
 });
 // Karta Ochirish DELETE
